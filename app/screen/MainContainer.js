@@ -10,6 +10,8 @@ import ChatScreen from "./chatScreen";
 import DashboardScreen from "./dashboardScreen";
 import ProfileScreen from "./profileScreen";
 import EventScreen from "./eventScreen";
+import HomeScreenNavigator from "./homeScreenNavigator";
+import DashboardScreenNavigator from "./dashboardScreenNavigator";
 
 const homeName = "Home";
 const eventName = "Event";
@@ -33,16 +35,16 @@ export default function MainContainer({ route, navigation }) {
           } else if (rn === dashboardName) {
             iconName = focused ? "list" : "list-outline";
           } else if (rn === profileName) {
-            iconName = focused ? "settings" : "settings-outline";
+            iconName = focused ? "person" : "person-outline";
           } else if (rn === eventName) {
-            iconName = focused ? "settings" : "settings-outline";
+            iconName = focused ? "calendar" : "calendar-outline";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: "tomato",
+        activeTintColor: "#82CAB0",
         inactiveTintColor: "grey",
         tabBarHeight: "10%",
         labelStyle: { paddingBottom: 10, fontSize: 10 },
@@ -51,10 +53,14 @@ export default function MainContainer({ route, navigation }) {
         },
       }}
     >
-      <Tab.Screen name={homeName} component={HomeScreen} />
-      <Tab.Screen name={dashboardName} component={DashboardScreen} />
-      <Tab.Screen name={profileName} component={ProfileScreen} />
+      <Tab.Screen
+        name={homeName}
+        component={HomeScreenNavigator}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen name={dashboardName} component={DashboardScreenNavigator} />
       <Tab.Screen name={eventName} component={EventScreen} />
+      <Tab.Screen name={profileName} component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

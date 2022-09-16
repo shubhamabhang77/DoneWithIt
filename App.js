@@ -44,7 +44,7 @@ export default function App() {
     // <MainContainer></MainContainer>
     // <Question1Screen></Question1Screen>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Navigator initialRouteName="MainContainer">
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}

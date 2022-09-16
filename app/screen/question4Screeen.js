@@ -26,7 +26,7 @@ export default function Question4Screen({ route, navigation }) {
   };
 
   const goToHome = (myOneAns, myTwoAns, myThreeAns, fourAns) => {
-    navigation.navigate("Login", {
+    navigation.navigate("MainContainer", {
       myFourAns: fourAns,
       myThreeAns: myThreeAns,
       myTwoAns: myTwoAns,

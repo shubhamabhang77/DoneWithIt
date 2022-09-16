@@ -7,21 +7,26 @@ import {
   Image,
   Button,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 
-function WelcomeScreen() {
-  const email = ({ navigation }) => {
+function WelcomeScreen({ props, navigation }) {
+  const email = () => {
+    console.log("email print");
     navigation.navigate("Signup");
   };
 
-  const google = () => {
+  const google = ({ navigation }) => {
     console.log("google print");
+    navigation.navigate("");
   };
 
-  const facebook = () => {
+  const facebook = ({ navigation }) => {
     console.log("facebook print");
+    navigation.navigate("");
   };
-  const login = ({ navigation }) => {
+  const login = () => {
+    console.log("login print");
     navigation.navigate("Login");
   };
   let buttonFontSize = 15;
@@ -31,11 +36,12 @@ function WelcomeScreen() {
       source={require("../assets/background.jpg")}
     >
       <View style={styles.topContainer}></View>
+      <Image style={styles.logo} source={require("../assets/logo1.png")} />
+      <View style={styles.middle1Container}></View>
       <View style={styles.middleContainer}>
-        <Text>Welcomeshubham abhan here</Text>
         <TouchableOpacity
           style={[styles.button, styles.emailLogin]}
-          onPress={email}
+          onPress={() => email(navigation)}
         >
           <Image
             style={styles.buttonicon}
@@ -71,7 +77,6 @@ function WelcomeScreen() {
         >
           <Text style={{ fontWeight: "bold" }}>Log In</Text>
         </TouchableOpacity>
-        f
       </View>
       <View style={styles.bottomContainer}></View>
     </ImageBackground>
@@ -84,25 +89,34 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-
+  logo: {
+    flex: 5,
+    width: "100%",
+    height: Dimensions.get("screen").height / 25,
+  },
   topContainer: {
-    flex: 8,
+    flex: 2,
   },
   middleContainer: {
-    flex: 3,
+    flex: 5,
     width: "95%",
+    height: Dimensions.get("screen").height / 4,
     justifyContent: "space-around",
   },
-
+  middle1Container: {
+    flex: 3,
+  },
   bottomContainer: {
-    flex: 2,
+    flex: 1,
   },
 
   button: {
-    padding: "2%",
+    paddingTop: "3%",
+    paddingBottom: "4%",
     borderRadius: 50,
     flexDirection: "row",
     justifyContent: "center",
+    height: Dimensions.get("screen").height / 17,
   },
   emailLogin: {
     backgroundColor: "#263e58",
@@ -113,12 +127,10 @@ const styles = StyleSheet.create({
   googleLogin: {
     backgroundColor: "white",
   },
-  loginButton: {
-    backgroundColor: "none",
-  },
+  loginButton: {},
   textInsideButton: {
     color: "#fff",
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "bold",
     alignItems: "center",
   },

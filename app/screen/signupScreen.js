@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: colors.accent,
     margin: 10,
-    height: 60,
+    height: Dimensions.get("screen").height / 20,
     borderRadius: 30,
     elevation: 1,
     padding: 10,
@@ -254,14 +254,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.yellow,
-    height: 80,
+    height: Dimensions.get("screen").height / 15,
     borderRadius: 60,
   },
   submitText: {
     color: colors.white,
     textTransform: "uppercase",
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 20,
     letterSpacing: 2,
   },
   headerText: {

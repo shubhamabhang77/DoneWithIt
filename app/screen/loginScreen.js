@@ -15,19 +15,16 @@ import { colors } from "../constants/theme";
 
 export default function LoginScreen(props) {
   const [state, setState] = useState({
-    mobileno: "",
+    email: "",
     password: "",
   });
 
-  const handleLogin = ({ navigation }) => {
+  const handleLogin = () => {
     const re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (
-      state.mobileno === "" ||
-      !re.test(String(state.mobileno).length != 10)
-    ) {
-      ToastAndroid.show("Mobile Number is invalid", ToastAndroid.SHORT);
+    if (state.email === "" || !re.test(String(state.email).toLowerCase())) {
+      ToastAndroid.show("Email is invalid", ToastAndroid.SHORT);
       return;
     }
 
@@ -38,7 +35,6 @@ export default function LoginScreen(props) {
       );
       return;
     }
-    navigation.navigate("Home");
   };
 
   return (
@@ -57,12 +53,12 @@ export default function LoginScreen(props) {
           <Text style={styles.headerText}>Login</Text>
           <TextInput
             style={styles.textInput}
-            placeholder={"Mobile Number"}
-            value={state.mobileno}
+            placeholder={"Email"}
+            value={state.email}
             onChangeText={(text) => {
               setState({
                 ...state,
-                mobileno: text,
+                email: text,
               });
             }}
           />
@@ -78,7 +74,7 @@ export default function LoginScreen(props) {
             }}
             secureTextEntry={true}
           />
-          <TouchableOpacity onPress={() => props.c}>
+          <TouchableOpacity onPress={() => props.navigation.navigate("SignUp")}>
             <Text style={styles.already}>Don't have an account?</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleLogin}>
@@ -109,7 +105,7 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: colors.accent,
     margin: 10,
-    height: 40,
+    height: Dimensions.get("screen").height / 20,
     borderRadius: 30,
     elevation: 1,
     padding: 10,
@@ -125,11 +121,11 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     alignSelf: "center",
-    width: 150,
+    width: 250,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.yellow,
-    height: 40,
+    height: Dimensions.get("screen").height / 15,
     borderRadius: 60,
   },
   submitText: {

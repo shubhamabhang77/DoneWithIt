@@ -72,7 +72,7 @@ function SignupScreen({ navigation }) {
     }
     console.log("before-register");
     console.log("states are here", state);
-    navigation.navigate("question1");
+    navigation.navigate("question1", { state: state });
   };
 
   return (

@@ -29,6 +29,7 @@ export default function Question3Screen({ route, navigation }) {
       myThreeAns: threeAns,
       myTwoAns: myTwoAns,
       myOneAns: myOneAns,
+      state: route.params.state,
     });
   };
 
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#DBA62B",
+    backgroundColor: "#82CAB0",
     height: 60,
     borderRadius: 60,
     bottom: 150,

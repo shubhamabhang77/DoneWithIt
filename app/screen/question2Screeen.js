@@ -24,7 +24,11 @@ export default function Question2Screen({ route, navigation }) {
   };
 
   const goToQuestion3 = (myOneAns, twoAns) => {
-    navigation.navigate("question3", { myTwoAns: twoAns, myOneAns: myOneAns });
+    navigation.navigate("question3", {
+      myTwoAns: twoAns,
+      myOneAns: myOneAns,
+      state: route.params.state,
+    });
   };
 
   return (
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#DBA62B",
+    backgroundColor: "#82CAB0",
     height: 60,
     borderRadius: 60,
     bottom: 150,

@@ -55,22 +55,22 @@ const DATA = [
     audio: [
       {
         audioNo: "21",
-        audioName: "audio1",
+        audioName: "Audio 1",
         audioUrl: "google.com",
       },
       {
         audioNo: "22",
-        audioName: "audio2",
+        audioName: "Audio 2",
         audioUrl: "google.com",
       },
       {
         audioNo: "23",
-        audioName: "audio3",
+        audioName: "Audio 3",
         audioUrl: "google.com",
       },
       {
         audioNo: "24",
-        audioName: "audio4",
+        audioName: "Audio 4",
         audioUrl: "google.com",
       },
     ],
@@ -92,6 +92,16 @@ const chartdata = [
   { year: "13-09", earnings: 2 },
   { year: "14-09", earnings: 3 },
   { year: "15-04", earnings: 5 },
+  { year: "16-09", earnings: 2 },
+];
+
+const chartdata1 = [
+  { year: "10-09", earnings: 4 },
+  { year: "11-09", earnings: 2 },
+  { year: "12-09", earnings: 3 },
+  { year: "13-09", earnings: 1 },
+  { year: "14-09", earnings: 4 },
+  { year: "15-04", earnings: 7 },
   { year: "16-09", earnings: 2 },
 ];
 
@@ -195,7 +205,7 @@ export default function DashboardScreen({ navigation }) {
 
         <VictoryChart width={350} theme={VictoryTheme.material}>
           <VictoryBar
-            data={chartdata}
+            data={chartdata1}
             x="year"
             y="earnings"
             style={{

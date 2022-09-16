@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-web";
 import HomeScreen from "./homeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function HomeScreenNavigator({ navigation }) {
+export default function HomeScreenNavigator({ route, navigation }) {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator initialRouteName="Home">

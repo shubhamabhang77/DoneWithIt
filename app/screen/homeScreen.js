@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import { colors } from "../constants/theme";
-export default function HomeScreen({ routes, navigation }) {
+export default function HomeScreen({ route, navigation }) {
   var hour = new Date().getHours(); // for now
   let text1;
   if (hour < 12) {

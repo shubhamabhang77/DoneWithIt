@@ -15,14 +15,19 @@ const oneOptions = [
   "Feel Happier",
 ];
 
-export default function Question1Screen({ navigation }) {
+export default function Question1Screen({ route, navigation }) {
   const [oneAns, setOneAns] = useState([]);
+
   onSelectionsChange = (selectedAns) => {
     setOneAns(selectedAns);
   };
 
   const goToQuestion2 = (oneAns) => {
-    navigation.navigate("question2", { myOneAns: oneAns });
+    console.log("data", route.params.state);
+    navigation.navigate("question2", {
+      myOneAns: oneAns,
+      state: route.params.state,
+    });
   };
 
   return (
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#DBA62B",
+    backgroundColor: "#82CAB0",
     height: 60,
     borderRadius: 60,
     bottom: 150,

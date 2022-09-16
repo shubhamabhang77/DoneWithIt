@@ -26,12 +26,7 @@ export default function Question4Screen({ route, navigation }) {
   };
 
   const goToHome = (myOneAns, myTwoAns, myThreeAns, fourAns) => {
-    navigation.navigate("MainContainer", {
-      myFourAns: fourAns,
-      myThreeAns: myThreeAns,
-      myTwoAns: myTwoAns,
-      myOneAns: myOneAns,
-    });
+    navigation.navigate("MainContainer");
   };
 
   return (
@@ -99,7 +94,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#DBA62B",
+    backgroundColor: "#82CAB0",
     height: 60,
     borderRadius: 60,
     bottom: 150,

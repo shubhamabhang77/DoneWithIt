@@ -58,9 +58,21 @@ export default function MainContainer({ route, navigation }) {
         component={HomeScreenNavigator}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name={dashboardName} component={DashboardScreenNavigator} />
-      <Tab.Screen name={eventName} component={EventScreen} />
-      <Tab.Screen name={profileName} component={ProfileScreen} />
+      <Tab.Screen
+        name={dashboardName}
+        component={DashboardScreenNavigator}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name={eventName}
+        component={EventScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name={profileName}
+        component={ProfileScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }
